@@ -14,18 +14,24 @@ def linear_search(arr, target):
 
 # Write an iterative implementation of Binary Search
 def binary_search(arr, target):
-
-    # Find item in the middle
-    # if middle == target
-        # return True
-    # else if middle < target
-        # eliminate left half
-        # repeat search
-    # else if middle > target
-        # eliminate right half
-        # repeat search
-    return -1  # not found
-
+    # Find high and low index
+    high = len(arr) -1
+    low = 0
+    
+    while low <= high:
+        middle = (low + high ) // 2
+        guess = arr[middle]
+        
+        # if guess == target
+        if guess == target:
+            return middle
+        # else if guess > target
+        elif guess > target:
+            high = middle -1
+        # else if guess < target
+        elif guess < target:
+            low = middle + 1
+    return -1
 
 
 # sorted list
