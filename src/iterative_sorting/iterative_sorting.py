@@ -6,12 +6,13 @@ def selection_sort(arr):
         smallest_index = cur_index
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
-        # Your code here
-
+        for element in range(cur_index + 1, len(arr)):
+            if arr[element] < arr[smallest_index]:
+                smallest_index = element
 
         # TO-DO: swap
-        # Your code here
-
+        arr[smallest_index], arr[cur_index] = arr[cur_index], arr[smallest_index]
+        
     return arr
 
 
@@ -44,3 +45,9 @@ def counting_sort(arr, maximum=None):
 
 
     return arr
+
+
+arr = [3,44,38,5,47,15,36,26,27,2,46,4,19,50,48]
+arr2 = [3,44,38,5,47,15,36,26,27,2,46,4,19,50,48]
+print("Selection:", selection_sort(arr))
+print("Bubble:", bubble_sort(arr2))
